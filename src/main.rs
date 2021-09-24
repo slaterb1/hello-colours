@@ -20,6 +20,10 @@ impl fmt::Display for Colours {
 }
 
 /// Doc comment that ends up in online docs
+///
+/// # Arguments
+///
+/// * `colour` - Enum colour choice to return rgb values for
 // regular comment that does not appear in docs
 fn get_rgb(colour: Colours) -> (i16, i16, i16) {
     let (r, g, b) = match colour {
