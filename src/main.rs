@@ -35,9 +35,22 @@ fn get_rgb(colour: Colours) -> (i16, i16, i16) {
     return (r, g, b);
 }
 
+/// Sample Generics example
+///
+/// # Arguments
+///
+/// * `name` - Value to say hello to
+fn say_hi<T: fmt::Display>(name: T) {
+    println!("Hello {}!", name)
+}
+
 fn main() {
     let colour = Colours::Custom(100, 23, 64);
     let (r, g, b) = get_rgb(colour.clone());
     println!("r: {}, g: {}, b: {}", r, g, b);
-    println!("colour: {}", colour)
+    println!("********************");
+    say_hi(colour);
+    say_hi(1);
+    say_hi("Bob");
+    say_hi("Bob".to_owned());
 }
